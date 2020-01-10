@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {{ settings.SITE_TITLE }} CMS{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{{ settings.SITE_TITLE }} CMS v{{ settings.SITE_VERSION }}</h1>
+{% endblock %}
+
+{% block nav-global %}
+  {% if user.is_staff %}
+  <style type="text/css">
+  .ml {
+    margin: 0 10px 10px;
+    display: block;
+    float: left;
+  }
+  </style>
+  {% endif %}
+{% endblock %}

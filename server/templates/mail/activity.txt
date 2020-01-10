@@ -1,0 +1,25 @@
+Liebe Bewohnerin, lieber Bewohner von {{ location }}.
+
+Auf Ihre Aktivität »{{ title }}« haben Sie von {{ sender.apartment }} die folgende Antwort erhalten:
+
+Teilnahme: {{ rsvp.sender }}
+
+>> {{ body }}
+
+Insgesamt sieht es so aus:
+
+{{ rsvp.yes }} ja
+{{ rsvp.no }} nein
+{{ rsvp.maybe }} vielleicht
+{{ rsvp.unknown }} weiß noch nicht
+
+Drücken Sie einfach auf »Antworten« um ein Mail direkt an die Absenderin zu schreiben.
+
+Die E-Mail Adresse des Absenders lautet: {{ sender.email }}
+
+Wir wünschen einen schönen Tag!
+
+--
+
+Eine automatische Nachricht von Ihrem digitalen schwarzen Brett.
+{{ url }}

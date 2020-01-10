@@ -1,0 +1,17 @@
+.DS_Store
+
+node_modules
+private
+
+client/dist
+client/docs
+
+server/static
+server/upload
+server/server/settings/*activate
+server/server/settings/*local.*
+
+*.egg*
+*.pyc
+*.db
+*.log

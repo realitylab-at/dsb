@@ -1,0 +1,16 @@
+Liebe Hausverwaltung der {{ building }}.
+
+Sie haben von {{ apartment }} die folgende Mitteilung erhalten:
+
+>> {{ body }}
+
+Drücken Sie einfach auf »Antworten« um ein Mail direkt an die Absenderin zu schreiben.
+
+Die E-Mail-Adresse des Absenders lautet: {{ sender }}
+
+Wir wünschen einen schönen Tag!
+
+--
+
+Eine automatische Nachricht von Ihrem digitalen schwarzen Brett.
+{{ url }}

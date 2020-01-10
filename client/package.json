@@ -1,0 +1,97 @@
+{
+  "name": "infoboard",
+  "version": "16.4.0",
+  "title": "reality lab Infoboard Front-End",
+  "description": "",
+  "url": "http://infoboard/",
+  "keywords": [
+    "city",
+    "communication",
+    "mobility",
+    "neighborhood",
+    "network",
+    "smart",
+    "social"
+  ],
+  "preferGlobal": "false",
+  "author": {
+    "name": "Tobi Schäfer",
+    "email": "mail@tobischaefer.com"
+  },
+  "contributors": [
+    {
+      "name": "Gernot Tscherteu",
+      "email": "gt@realitylab.at"
+    },
+    {
+      "name": "Anja Gasser",
+      "email": "a.gasser@meta.at"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh+git://git@rlab-git/opt/git/infoboard"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap": "^3.1.1",
+    "console": "^0.5.2",
+    "eonasdan-bootstrap-datetimepicker": "git://github.com/Eonasdan/bootstrap-datetimepicker.git#4.17.43",
+    "fileapi": "^2.0.3",
+    "html5shiv": "^3.7.2",
+    "jasny-bootstrap": "git://github.com/jasny/bootstrap.git#v3.1.3",
+    "jquery": "^2.1.4",
+    "jquery-jsonrpc": "git://github.com/p3k/jquery-jsonrpc.git#0.1.1",
+    "json2": "^0.4.0",
+    "lodash": "^3.10.1",
+    "moment": "^2.8.2",
+    "respond.js": "^1.4.2",
+    "sprintf": "^0.1.5",
+    "webshim": "git://github.com/aFarkas/webshim.git#1.15.7"
+  },
+  "devDependencies": {
+    "browserify": "^11.1.0",
+    "browserify-shim": "^3.8.10",
+    "csso": "^1.3.11",
+    "event-stream": "^3.1.5",
+    "less": "^2.5.1",
+    "parallelshell": "^2.0.0",
+    "react": "^0.13.0",
+    "reactify": "^1.1.0",
+    "shelljs": "^0.5.3",
+    "uglify-js": "^2.4.24",
+    "watch": "^0.16.0"
+  },
+  "scripts": {
+    "build": "npm run -s copy && npm run -s build:css && npm run -s build:js",
+    "build:css": "node scripts/build-css.js",
+    "build:js": "BROWSERIFYSHIM_DIAGNOSTICS= node scripts/build-js.js",
+    "build:watch": "parallelshell 'npm run -s watch:js' 'npm run -s watch:css'",
+    "clean": "node -e \"require('shelljs').rm('-rf', 'dist')\"",
+    "copy": "node scripts/copy.js",
+    "prebuild": "npm run -s clean",
+    "prebuild:js": "npm dedupe",
+    "watch:css": "watch 'npm run -s build:css' less",
+    "watch:js": "watch 'npm run -s build:js' js sites"
+  },
+  "browser": {
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
+    "bootstrap-fileupload": "./node_modules/jasny-bootstrap/dist/js/jasny-bootstrap.js",
+    "bootstrap-datetimepicker": "./node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js",
+    "json": "./node_modules/json2/lib/JSON2/static/json2.js",
+    "polyfiller": "./node_modules/webshim/js-webshim/dev/polyfiller.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "reactify"
+    ]
+  },
+  "browserify-shim": {
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  }
+}

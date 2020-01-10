@@ -1,0 +1,232 @@
+.rounded-corners(@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius
+}
+
+.user-select(@value) {
+  user-select: @value;
+ -o-user-select: @value;
+ -ms-user-select: @value;
+ -moz-user-select: @value;
+ -khtml-user-select: @value;
+ -webkit-user-select: @value;
+ -webkit-touch-callout: @value;
+}
+
+.transform(@def) {
+  transform: @def;
+  -ms-transform: @def;
+  -webkit-transform: @def;
+  -o-transform: @def;
+  -moz-transform: @def;
+}
+
+.transition(@def) {
+  transition: @def;
+  -webkit-transition: @def;
+  -o-transition: @def;
+  -moz-transition: @def;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'PragmaticaWebLight';
+  src: url('../fonts/PRG45__W.eot?#iefix') format('embedded-opentype');
+  src: local('ℑ'),
+      url('../fonts/PRG45__W.woff') format('woff'),
+      url('../fonts/PRG45__W.ttf') format('truetype'),
+      url('../fonts/PRG45__W.svg#PragmaticaWeb-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-size: 100%;
+  font-family: PragmaticaWebLight,
+      'Helvetica Neue',
+      Helvetica,
+      Arial,
+      sans-serif;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: url(../img/bg.jpg);
+  background-color: @bg-color;
+  color: @text-color;
+
+  &.touch-screen {
+    // Disabling selected text hightlight on touch screens…
+    * {
+      .user-select(none);
+    }
+
+    // …except for form input.
+    input, textarea {
+      .user-select(auto);
+    }
+  }
+}
+
+header {
+  padding: 2rem 0;
+  color: @header-color;
+
+  img.logo {
+    max-height: 64px;
+  }
+
+  .title, .brand {
+    font-size: 64px;
+  }
+
+  .title {
+    color: @section-color;
+    font-weight: bold;
+  }
+
+  .slash {
+    margin-left: 5px;
+    margin-right: 2px;
+  }
+
+  .brand {
+    margin-right: 0.5em;
+  }
+
+  time {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: rgba(255, 255, 255, .3) 0 0 1px;
+  }
+}
+
+section {
+  h2, .bottom {
+    margin: 0 -15px;
+    padding: 0.5rem 15px;
+    color: @section-color;
+
+  }
+
+  .bottom a:not(.btn) {
+    color: @section-color;
+    * {
+      text-shadow: #ff0000 0 0 5px;
+    }
+  }
+
+  h2 a {
+    color: @header-color;
+    &:hover {
+      color: @section-color;
+    }
+  }
+}
+
+aside {
+  h2 {
+    margin: 0 -15px;
+    padding: 0.5rem 15px;
+
+    small {
+      color: @section-color;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .content {
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+article:last-child hr {
+  visibility: hidden;
+}
+
+.ghost {
+  color: #eee;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.bookings {
+  table {
+    margin-top: 2rem;
+  }
+
+  td, th {
+    font-weight: normal;
+    cursor: cell;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .booking-checkbox {
+    font-size: 2rem;
+    line-height: 1rem;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+
+    i.selected {
+      cursor: cell;
+    }
+
+    small {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Fix for error color in fileinput due to <span> instead of <input>
+.has-error .fileinput-filename {
+  color: #a94442;
+}
+
+// Fix for missing border radius in fileinput element
+.fileinput a.input-group-addon {
+  border-radius: 0 4px 4px 0 !important;
+}
+
+// Allow clicks on disabled buttons to show our login popover
+.btn[disabled] {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+// Enable scrolling in the modal window
+.modal-body {
+  overflow: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  @import 'less/xs';
+}
+
+@media only screen and (min-width: 768px) {
+  @import 'less/md';
+}
+
+@media only screen and (min-width: 1600px) {
+  @import 'less/lg';
+}

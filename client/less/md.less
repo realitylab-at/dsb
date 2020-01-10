@@ -1,0 +1,78 @@
+// Pulling date down to baseline
+header {
+  display: table;
+
+  p {
+    display: table-cell;
+    vertical-align: text-bottom;
+    float: none !important;
+  }
+}
+
+section .content {
+  padding: 0 15px 0 10px;
+  margin-right: -15px;
+  background: @section-color;
+  overflow: auto;
+
+  .image {
+    float: left;
+    width: 33%;
+    max-height: 200px;
+    max-height: 10vw;
+    margin: 0.5em 1em 0.5em 0;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  img {
+    //max-width: 100%;
+    //max-height: 100%;
+  }
+}
+
+aside {
+  h2 {
+    margin-left: 0;
+  }
+
+  .content {
+    padding-left: 15px;
+    border-left: 1px solid @header-color;
+  }
+}
+
+footer {
+  position: fixed !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: @section-color;
+
+  menu {
+    padding: 0;
+    overflow: hidden;
+
+    li {
+      display: inline-block;
+      margin-right: 5em;
+
+      &.user-status {
+        margin-right: 20em;
+      }
+
+      &:last-child {
+        margin-right: 0;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+// FIXME: Do we want button colors fitting to the site settings?
+/*
+.btn-default {
+  color: @header-color;
+  border-color: @header-color;
+}
+*/
