@@ -43,7 +43,7 @@
     "jquery": "^2.1.4",
     "jquery-jsonrpc": "git://github.com/p3k/jquery-jsonrpc.git#0.1.1",
     "json2": "^0.4.0",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.21",
     "moment": "^2.8.2",
     "respond.js": "^1.4.2",
     "sprintf": "^0.1.5",
